@@ -14,8 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import MDButton from "components/MDButton";
-import { Icon, Grid, Modal } from "@mui/material";
+import {  Grid } from "@mui/material";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
@@ -28,45 +27,9 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import AgGreedTable from "examples/AgGreedTable/AgGreedTable";
-import { useEffect, useState } from "react";
 
 function Tables() {
-  const [pupaRows, setPupaRows] = useState();
-  const [lupaRows, setLupaRows] = useState();
 
-  useEffect(() => {
-    try {
-      fetch("http://localhost:5000" + "/pupa/20/0", {
-        method: "GET",
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((res2) => {
-          setPupaRows(res2);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      fetch("http://localhost:5000" + "/lupa/20/0", {
-        method: "GET",
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((res2) => {
-          setLupaRows(res2);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(err);
-    }
-  }, []);
-
-  console.log(lupaRows);
-  console.log(pupaRows);
   return (
     <DashboardLayout>
       <DashboardNavbar />

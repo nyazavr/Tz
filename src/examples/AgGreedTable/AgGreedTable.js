@@ -30,7 +30,6 @@ const AgGreedTable = function AgGreedTable(props) {
   };
   const onDelete = () => {
     if (agGreedRef.current.api.getSelectedRows().length) {
-      console.log(agGreedRef.current.api.getSelectedRows()[0]);
       fetch(url + "/delete/" + agGreedRef.current.api.getSelectedRows()[0].id, { method: "DELETE" })
         .then(
           () => {}
@@ -94,11 +93,9 @@ const AgGreedTable = function AgGreedTable(props) {
         .then((res) => res.count),
       getRows: (params) => {
         let lastRow = params.endRow;
-        console.log(url + "/" + params.endRow + "/" + params.startRow);
         fetch(url + "/" + params.endRow + "/" + params.startRow)
           .then((res) => res.json())
           .then((res) => {
-            console.log(Object.values(res));
             return params.successCallback(Object.values(res.data), lastRow + res.length);
           });
       },

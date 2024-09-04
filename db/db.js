@@ -13,7 +13,7 @@ const db = pgp({
     port: 5432,
     database: 'mydb',
     user: 'postgres',
-    password: 'furofa20',
+    password: '',
 
 });
 module.exports = {

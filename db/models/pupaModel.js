@@ -15,7 +15,6 @@ class PupaRepository {
         return this.db.result('DELETE FROM pupa WHERE id = $1', +id);
     }
     edit(id,lupaId,age,firstname,salary,newdate) {
-        console.log([+lupaId, +age, firstname, +salary, newdate, +id])
         return this.db.result('UPDATE pupa SET lupaid=$1,age=$2,firstname=$3,salary=$4,newdate=$5 WHERE id = $6;', [+lupaId, +age, firstname, +salary, newdate, +id])
     }
     findById(id) {

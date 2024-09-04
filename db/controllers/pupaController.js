@@ -71,7 +71,6 @@ const pupa = {
     },
     async delete(req,res){
         try {
-            console.log(req.params.id)
             const data = await db.pupa.delete(req.params.id)
             res.json({
                 success: true,

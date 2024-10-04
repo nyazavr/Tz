@@ -34,6 +34,7 @@
     "yup": "1.1.1"
   },
   "scripts": {
+    "startServer": "cd ./db && node index.js",
     "start": "npx eslint --fix ./src && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
